@@ -30,6 +30,7 @@ apt-get install git -y
 apt-get install dos2unix -y
 mkdir /etc/update-motd.d
 apt-get install inxi screenfetch lolcat figlet -y
+apt-get install dropbear unzip build-essential curl stunnel4 net-tools python python2 lsof git netcat -y
 
 /bin/cat <<"EOM" >/etc/update-motd.d/01-custom
 #!/bin/sh
@@ -51,7 +52,6 @@ chmod +x /etc/update-motd.d/01-custom
 rm /etc/motd
 touch /etc/motd.tail
 
-apt-get install dropbear unzip build-essential curl stunnel4 net-tools python python2 lsof git netcat -y
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=442/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
