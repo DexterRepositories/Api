@@ -756,27 +756,14 @@ echo -e " \033[0;35m════════════════════
 }
 
 ports () {
-echo -e " \e[92m All Service Now are Running!!!!\e[0m \e[97m:\e[0m"
-echo -e " \033[0;35m══════════════════════════════════════════════════════════════════\033[0m"
-echo -e " \e[92m SERVICE PORT:\e[0m \e[97m:\e[0m" 
-echo ""
-echo -e " \e[92m SSH:\e[0m \e[97m: 22\e[0m" 
-echo -e " \e[92m DROPBEAR:\e[0m \e[97m: 442\e[0m" 
-echo -e " \e[92m Proxy:\e[0m \e[97m: 8080 , 8010\e[0m" 
-echo -e " \e[92m WEBSOCKET/SSH:\e[0m \e[97m: 80\e[0m" 
-echo -e " \e[92m WEBSOCKET/SSL:\e[0m \e[97m: 443\e[0m"
-echo -e " \e[92m STUNNEL:\e[0m \e[97m: 443\e[0m" 
-echo -e " \033[0;35m══════════════════════════════════════════════════════════════════\033[0m"
 echo -e " \e[92m SlowDns Configuration:\e[0m \e[97m:\e[0m" 
 echo ""
+echo -e " \e[92m YOUR NAMESERVER:\e[0m \e[97m: $domain\e[0m"
 echo -e " \e[92m BADVPN PORT:\e[0m \e[97m: 7300\e[0m"
 echo -e " \e[92m SLOWDNS PORT:\e[0m \e[97m: 2222\e[0m" 
 echo -e " \e[92m SLOWCHAVE KEY:\e[0m \e[97m: 8428c0cfc1c81674830336b6383eeb1522e248876a6cc707f1aa32becf524c27\e[0m" 
 echo -e " \033[0;35m══════════════════════════════════════════════════════════════════\033[0m"
-echo -e ""
-echo -e " \033[0;35m══════════════════════════════════════════════════════════════════\033[0m"
-echo -e " \033[0;31m To Create Account Just Type: dextermenu\033[0m"
-echo -e " \033[0;35m══════════════════════════════════════════════════════════════════\033[0m"
+
 }
 
 controls(){
