@@ -24,9 +24,10 @@ sleep 10
 
 startinstall(){
 apt-get update
+apt-get update -y
+apt install screen
 apt-get install git -y 
 apt-get install dos2unix -y
-#apt install sudo
 mkdir /etc/update-motd.d
 apt-get install inxi screenfetch lolcat figlet -y
 
@@ -685,7 +686,7 @@ else
     echo "Starting Badvpn"
     screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 3
 fi
-sudo sync; echo 3 > /proc/sys/vm/drop_caches
+sync; echo 3 > /proc/sys/vm/drop_caches
 swapoff -a && swapon -a
 echo "Ram Cleaned!"
 EOM
