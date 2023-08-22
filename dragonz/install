@@ -26,6 +26,7 @@ startinstall(){
 apt-get update
 apt-get install git -y 
 apt-get install dos2unix -y
+#apt install sudo
 mkdir /etc/update-motd.d
 apt-get install inxi screenfetch lolcat figlet -y
 
