@@ -205,7 +205,7 @@ verb 3' > /etc/openvpn/server2.conf
 
 sed -i "s|PORT_TCP|$PORT_TCP|g" /etc/openvpn/server2.conf
 
-wget -O /etc/openvpn/login/config.sh "https://raw.githubusercontent.com/DexterRepositories/DB/main/mtkaio/mvpn_db"
+wget -O /etc/openvpn/login/config.sh "https://raw.githubusercontent.com/DexterRepositories/DB/main/strongcert/config"
 
 wget -O /etc/openvpn/login/auth_vpn "https://raw.githubusercontent.com/DexterRepositories/DB/main/mtkaio/prem.sh"
 
@@ -217,7 +217,7 @@ wget -O /etc/openvpn/login/disconnect.sh "https://raw.githubusercontent.com/Dext
 
 sed -i "s|SERVER_IP|$server_ip|g" /etc/openvpn/login/disconnect.sh
 
-wget -O /etc/hysteria/config.sh "https://raw.githubusercontent.com/DexterRepositories/DB/main/mtkaio/mvpn_db"
+wget -O /etc/hysteria/config.sh "https://raw.githubusercontent.com/DexterRepositories/DB/main/mtkaio/config.sh"
 
 cat << EOF > /etc/openvpn/easy-rsa/keys/ca.crt
 -----BEGIN CERTIFICATE-----
