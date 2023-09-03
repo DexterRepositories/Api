@@ -1060,6 +1060,8 @@ echo '
 echo -e " \033[0;35m══════════════════════════════════════════════════════════════════\033[0m"
 rm -rf mvpn_premium
 rm -rf install_server.sh
+systemctl enable hysteria-server.service
+systemctl restart hysteria-server.service
 netstat -tpln
 ln -sf /dev/null ~/.bash_history
 echo 'Server will reboot after 10 seconds'
